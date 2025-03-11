@@ -3,4 +3,41 @@
   justify-content: center;
   align-items: center;
   width: 1170px;
+  padding: 90px 0px 120px;
+}
+
+.recent-projects-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recent-projects-heading {
+  margin-bottom: 15px;
+}
+
+
+.recent-projects-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.recent-projects-cards img {
+  display: block;
+}
+
+.portrait {
+  width: 270px;
+  height: 480px;
+  border-radius: 8px;
+}
+
+.landscape {
+  width: 570px;
+  height: 380px;
+  border-radius: 8px;
 }

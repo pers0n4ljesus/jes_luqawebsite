@@ -9,6 +9,7 @@ body {
   align-items: center;
 }
 
+
 h1, h2, h3, h4, h5, h6, p, .h24 {
   margin: 0;
   padding: 0;
@@ -95,4 +96,16 @@ h6 {
 
 .text-gray {
   color : rgb(114, 109, 123);
+}
+
+.text-upper{
+  text-transform: uppercase;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.border8{
+  border-radius: 8px 0px 0px 8px;
 }

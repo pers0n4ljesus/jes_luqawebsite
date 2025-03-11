@@ -1,0 +1,64 @@
+.benefits-section-container {
+  position: absolute;
+}
+
+.projects-overview-section-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 650px;
+  justify-content: center;
+  align-items: center;
+  background-color: #6222cc;
+}
+
+.stats-text {
+  color: rgb(206, 176, 255);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 1170px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.border-remove {
+  border: none;
+}
+
+.benefits-container {
+  display: flex;
+  position: absolute;
+  top:75%;
+  align-self: end;
+  gap: 30px;
+  background-color: white;
+  border-radius: 10px 0px 0px 10px;
+  width: 1200px;
+  transform: translateX(20%);
+  padding-right: calc(100vw - 1200px);
+}
+
+.benefits-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 480px;
+  margin-left: 90px;
+}
+
+.white-fill {
+  background-color: white;
+  width: 100%;
+}
