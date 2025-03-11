@@ -1,0 +1,6 @@
+.recent-projects-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1170px;
+}

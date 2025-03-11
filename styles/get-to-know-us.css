@@ -1,0 +1,29 @@
+.know-us-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 140px 0px 120px;
+}
+
+.know-us-section-margin {
+  display: flex;
+  width: 1170px;
+  justify-content: end;
+}
+
+.know-us-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 570px;
+}
+
+.know-us-heading {
+  margin-bottom: 30px;
+}
+
+.know-us-subheading {
+  margin-bottom: 40px;
+}

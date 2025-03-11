@@ -1,0 +1,25 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 970px;
+  width: 100%;
+  background-color: black;
+}
+
+.hero-text {
+  margin-top: 30px;
+  width: 1170px;
+  height: 300px;
+}
+
+.cta-button {
+  background-color: rgb(98, 34, 204);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  padding: 17px 60px;
+  margin-top: 52px;
+}
+
