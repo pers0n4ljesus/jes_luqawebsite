@@ -107,5 +107,10 @@ h6 {
 }
 
 .border8{
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 8px 0px 0px 0px;
+  margin-left: -1px;
+}
+
+.white {
+  color: white;
 }

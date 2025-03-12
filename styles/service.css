@@ -1,4 +1,5 @@
 .service-section-container{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,4 +59,15 @@
 .service-section-cta {
   text-transform: uppercase;
   padding: 48px 0px 51px 0px;
+}
+
+.floating-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 940px;
+  height: 730px;
+  opacity: 0.4;
+  z-index: 0;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(84%) saturate(658%) hue-rotate(228deg);
 }

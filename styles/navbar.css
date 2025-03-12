@@ -1,5 +1,5 @@
 .navbar-container {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,7 @@
   height: 108px;
   width: 100%;
   z-index: 1000;
-  background-color: black;
+  background-color: transparent;
   box-sizing: border-box;
 }
 
