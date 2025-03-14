@@ -10,6 +10,7 @@ body {
 }
 
 
+
 h1, h2, h3, h4, h5, h6, p, .h24 {
   margin: 0;
   padding: 0;
@@ -98,6 +99,10 @@ h6 {
   color : rgb(114, 109, 123);
 }
 
+.text-gray-footer {
+  color: rgb(160, 155, 170);
+}
+
 .text-upper{
   text-transform: uppercase;
 }
@@ -114,3 +119,46 @@ h6 {
 .white {
   color: white;
 }
+
+.black {
+  color: black;
+}
+
+.h30 {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
+}
+
+.h20 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.h40 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.h15 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 36px
+}
+
+.divider, .divider2 {
+  border: none;
+  height: 1px;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin: 18px 0px;
+  width: 100%;
+}
+
+.divider2 {
+  height: 3px;
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
+

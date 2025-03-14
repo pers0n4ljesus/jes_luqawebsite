@@ -44,9 +44,7 @@
   gap: 30px;
   background-color: white;
   border-radius: 10px 0px 0px 10px;
-  width: 1200px;
-  transform: translateX(20%);
-  padding-right: calc(100vw - 1200px);
+
 }
 
 .benefits-content-container {

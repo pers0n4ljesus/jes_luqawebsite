@@ -1,0 +1,114 @@
+.footer-section {
+  margin-top: 396px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.footer-section-header {
+  display: flex;
+  width: 1170px;
+  height: 136px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-header-left-section {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.footer-middle-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.footer-middle-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/shapes/site-footer-shape.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  background-color: rgba(98, 34, 204, 0.5);
+  background-blend-mode: multiply;
+  z-index: -1;
+}
+
+.footer-middle-section-container {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter-box {
+  background-color: black;
+  height: min-content;
+  padding: 41px 50px;
+  justify-content: start;
+  align-items: start;
+  border: 1px solid rgba(2555, 255, 255, 0.1);
+}
+
+.footer-cols {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-headings {
+  margin-bottom: 23px;
+}
+
+.footer-email-input {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: rgb(160, 155, 170);
+}
+
+.footer-email-input::placeholder {
+  color: rgb(160, 155, 170);
+
+}
+
+.footer-bottom {
+  margin-top: 91px;
+  width: 1170px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.footer-bottom-right-section {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-bottom-right-section a {
+  text-decoration: none;
+  color: rgb(160, 155, 170);
+}
+
+
+
