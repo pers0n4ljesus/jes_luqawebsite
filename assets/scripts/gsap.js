@@ -42,24 +42,63 @@ setInterval(() => {
 
 //Animating hero section
 document.addEventListener("DOMContentLoaded", () => {
-  // Create a timeline that repeats indefinitely
-  const tl = gsap.timeline({
-    repeat: -1, // Loop forever
-    defaults: { duration: 4, ease: "power4.out" }
+  // Add will-change for smoother hardware acceleration
+  const animatedEls = document.querySelectorAll(".hero-bg, h3, .hero-text, .cta-button, .hero-slider-buttons");
+  animatedEls.forEach(el => {
+    el.style.willChange = "transform, opacity";
   });
 
-  // Animate the background: zoom in smoothly from scale 1 to 1.1 and then reset at the start of the loop.
-  tl.fromTo(".hero-bg", { scale: 1 }, { scale: 1.1 }, 0);
+  // Create a timeline that refreshes on repeat to prevent stutter
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatRefresh: true, // Recalculate values on each repeat cycle
+    defaults: { duration: 2, ease: "power2.out" }
+  });
 
-  // Animate h3 sliding in from above
-  tl.fromTo("h3", { y: -50, opacity: 0 }, { y: 0, opacity: 1 }, 0);
+  // Background animation: subtle zoom with linear easing
+  tl.fromTo(".hero-bg", { scale: 1 }, { scale: 1.15, ease: "power3.out", duration: 4 }, 0);
 
-  // Animate hero-text (h1) from below into place
-  tl.fromTo(".hero-text", { y: 50, opacity: 0 }, { y: 0, opacity: 1 }, 0);
-
-  // Animate the CTA button coming from above
-  tl.fromTo(".cta-button", { y: -50, opacity: 0 }, { y: 0, opacity: 1 }, 0);
-
-  // Animate the slider buttons fading in
-  tl.fromTo(".hero-slider-buttons", { opacity: 0 }, { opacity: 1 }, 0);
+  // Staggered element animations:
+  tl.fromTo("h3", { y: -90, opacity: 0 }, { y: 0, opacity: 1 }, 0.5);
+  tl.fromTo(".hero-text", { y: 90, opacity: 0 }, { y: 0, opacity: 1 }, 1);
+  tl.fromTo(".cta-button", { y: -90, opacity: 0 }, { y: 0, opacity: 1 }, 1.5);
+  tl.fromTo(".hero-slider-buttons", { opacity: 0 }, { opacity: 1 }, 2);
+  
+  // If you prefer a reverse (yoyo) effect to avoid an abrupt restart, uncomment the following line:
+  // tl.yoyo(true);
 });
+
+
+
+//Animating sticky header
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Ensure the sticky header is hidden off-screen at page load
+  gsap.set(".sticky-header", { y: "-100%" });
+
+  ScrollTrigger.create({
+    trigger: ".navbar-container", // Use the original header as the trigger
+    start: "bottom top", // When the bottom of .navbar-container hits the top of the viewport
+    // Uncomment markers for debugging:
+    // markers: true,
+    onEnter: () => {
+      gsap.to(".sticky-header", {
+        y: "0%", 
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(".sticky-header", {
+        y: "-100%",
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    }
+  });
+});
+
+
+
+

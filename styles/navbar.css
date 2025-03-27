@@ -16,7 +16,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .navbar-links {
@@ -75,3 +74,32 @@
   width: 1px;
   height: 100%;
 }
+
+.logo {
+  margin-right: 50px;
+}
+
+.text-bold-500 {
+  font-weight: 500;
+}
+
+.sticky-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 55px;
+  height: 108px;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-100%); /* Hide off-screen initially */
+}
+
+
+
