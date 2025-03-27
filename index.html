@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/navbar.css" />
@@ -22,6 +20,10 @@
     <link rel="stylesheet" href="./styles/projects-overview.css" />
     <link rel="stylesheet" href="./styles/cta-section.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 
 
   </head>
@@ -42,14 +44,13 @@
       </div>
       <div class="left-section">
         <button class="search">
-          <img>
+          <img src="./assets/icons/search.svg" class="search-icon" alt="Search Icon"/>
         </button>
-        <div class="vertical-line"></div>
         <div class="cta-container">
-          <img>
+          <img src="./assets/icons/message-us.svg" class="cta-icon" alt="Message Us Icon"/>
           <div class="cta">
-            <p>CALL ANYTIME</p>
-            <P>+91-9895709543</P>
+            <p class="text-start">CALL ANYTIME</p>
+            <P class="h18 text-start">+91-9895709543</P>
           </div>
         </div>
       </div>
@@ -59,6 +60,20 @@
       <h3>WELCOME TO LUQA</h3>
       <h1 class="hero-text">MODERN DEVOPS SOLUTIONS FOR CLOUD EXCELLENCE</h1>
       <button class="cta-button">DISCOVER MORE</button>
+      <div class="hero-slider-buttons">
+        <div class="hero-slider-button">
+          <img src="./assets/icons/left-arrow.svg" alt="Left Arrow"/>
+          <p>PREV</p>
+        </div>
+        <div class="hero-slider-button">
+          <p>NEXT</p>
+          <img src="./assets/icons/right-arrow.svg" alt="Right Arrow"/>
+        </div>
+      </div>
+
+      <div class="pink-bg-element"></div>
+      <div class="black-bg-element"></div>
+      <div class="pink-bg-element2"></div>
 
     </div>
 
@@ -297,6 +312,7 @@
     </div>
 
     <script src="./assets/scripts/parallax.js"></script>
+    <script src="./assets/scripts/gsap.js"></script>
 
   </body>
 </html>
