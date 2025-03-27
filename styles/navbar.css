@@ -29,6 +29,35 @@
   margin: 0;
 }
 
+.navbar-links li {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+
+.navbar-links li::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
+}
+
+
+.navbar-links li:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.navbar-links li.active::after {
+  width: 100%;
+  right: 0;
+}
+
+
 .left-section {
   display: flex;
   align-items: center;
