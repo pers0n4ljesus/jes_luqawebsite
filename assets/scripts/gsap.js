@@ -42,31 +42,95 @@ setInterval(() => {
 
 //Animating hero section
 document.addEventListener("DOMContentLoaded", () => {
-  // Add will-change for smoother hardware acceleration
+  gsap.registerPlugin(ScrollTrigger);
+  
   const animatedEls = document.querySelectorAll(".hero-bg, h3, .hero-text, .cta-button, .hero-slider-buttons");
   animatedEls.forEach(el => {
     el.style.willChange = "transform, opacity";
   });
+  
+  const slides = document.querySelectorAll(".hero-slide");
+  const dots = document.querySelectorAll(".slider-dots > div"); // assuming your dot elements are direct children
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoLoop;
 
-  // Create a timeline that refreshes on repeat to prevent stutter
-  const tl = gsap.timeline({
-    repeat: -1,
-    repeatRefresh: true, // Recalculate values on each repeat cycle
-    defaults: { duration: 2, ease: "power2.out" }
+  // Function to update dot states based on currentIndex
+  const updateDots = () => {
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[currentIndex]) {
+      dots[currentIndex].classList.add("active");
+    }
+  };
+
+  const animateSlideIn = (slide) => {
+    const tl = gsap.timeline();
+    tl.fromTo(slide.querySelector(".hero-bg"), { scale: 1 }, { scale: 1.15, ease: "power3.out", duration: 4 }, 0);
+    tl.fromTo(slide.querySelector("h3"), { y: -90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 0.5);
+    tl.fromTo(slide.querySelector(".hero-text"), { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 1);
+    tl.fromTo(slide.querySelector(".cta-button"), { y: -90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 1.5);
+    return tl;
+  };
+
+  const animateSlideOut = (slide) => {
+    const tl = gsap.timeline();
+    tl.to(slide.querySelector(".cta-button"), { y: -90, opacity: 0, duration: 0.5, ease: "power2.in" });
+    tl.to(slide.querySelector(".hero-text"), { y: 90, opacity: 0, duration: 0.5, ease: "power2.in" }, 0);
+    tl.to(slide.querySelector("h3"), { y: -90, opacity: 0, duration: 0.5, ease: "power2.in" }, 0);
+    tl.to(slide.querySelector(".hero-bg"), { scale: 1, duration: 0.5, ease: "power2.in" }, 0);
+    return tl;
+  };
+
+  const animateSlideOutPromise = (slide) => {
+    return new Promise((resolve) => {
+      const tl = animateSlideOut(slide);
+      tl.eventCallback("onComplete", resolve);
+    });
+  };
+
+  const showSlide = (newIndex) => {
+    if (newIndex === currentIndex) return;
+    
+    animateSlideOutPromise(slides[currentIndex]).then(() => {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = newIndex;
+      slides[currentIndex].classList.add("active");
+      animateSlideIn(slides[currentIndex]);
+      updateDots();
+    });
+  };
+
+  document.querySelector(".hero-slider-button.next").addEventListener("click", () => {
+    const nextIndex = (currentIndex + 1) % totalSlides;
+    showSlide(nextIndex);
+    resetAutoLoop();
   });
 
-  // Background animation: subtle zoom with linear easing
-  tl.fromTo(".hero-bg", { scale: 1 }, { scale: 1.15, ease: "power3.out", duration: 4 }, 0);
+  document.querySelector(".hero-slider-button.prev").addEventListener("click", () => {
+    const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(prevIndex);
+    resetAutoLoop();
+  });
 
-  // Staggered element animations:
-  tl.fromTo("h3", { y: -90, opacity: 0 }, { y: 0, opacity: 1 }, 0.5);
-  tl.fromTo(".hero-text", { y: 90, opacity: 0 }, { y: 0, opacity: 1 }, 1);
-  tl.fromTo(".cta-button", { y: -90, opacity: 0 }, { y: 0, opacity: 1 }, 1.5);
-  tl.fromTo(".hero-slider-buttons", { opacity: 0 }, { opacity: 1 }, 2);
-  
-  // If you prefer a reverse (yoyo) effect to avoid an abrupt restart, uncomment the following line:
-  // tl.yoyo(true);
+  const startAutoLoop = () => {
+    autoLoop = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % totalSlides;
+      showSlide(nextIndex);
+    }, 4000);
+  };
+
+  const resetAutoLoop = () => {
+    clearInterval(autoLoop);
+    startAutoLoop();
+  };
+
+  startAutoLoop();
+  // Animate the first slide and update dots on page load
+  animateSlideIn(slides[currentIndex]);
+  updateDots();
 });
+
+
 
 
 
@@ -74,14 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  // Ensure the sticky header is hidden off-screen at page load
-  gsap.set(".sticky-header", { y: "-100%" });
-
   ScrollTrigger.create({
-    trigger: ".navbar-container", // Use the original header as the trigger
-    start: "bottom top", // When the bottom of .navbar-container hits the top of the viewport
-    // Uncomment markers for debugging:
-    // markers: true,
+    trigger: ".navbar-container",
+    start: "bottom top",
     onEnter: () => {
       gsap.to(".sticky-header", {
         y: "0%", 
@@ -91,11 +150,23 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     onLeaveBack: () => {
       gsap.to(".sticky-header", {
-        y: "-100%",
+        y: "-100%", 
         duration: 0.5,
         ease: "power2.out"
       });
     }
+  });
+});
+
+
+//Animating floating shape
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.to(".floating-shape", {
+    x: -100,
+    duration: 3,
+    ease: "sine.inOut",
+    yoyo: true,
+    repeat: -1
   });
 });
 

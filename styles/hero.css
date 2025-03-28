@@ -9,20 +9,19 @@
   overflow: hidden;
 }
 
-/* Background layer for smoother GPU-accelerated animation */
 .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../assets/backgrounds/main-slider-1-1.jpg') center/cover no-repeat;
-  transform: scale(1);  /* Starting scale */
-  z-index: -4; /* Behind content */
+  background: url('../assets/backgrounds/main-slider-1-1.jpg') no-repeat 0 0 / cover fixed;
+  transform: scale(1);
+  z-index: -4;
   filter: grayscale(100%) brightness(40%) contrast(100%) sepia(1) hue-rotate(220deg) saturate(60%);
 }
 
-/* Add a dark overlay */
+
 .hero-bg::before {
   content: "";
   position: absolute;
@@ -30,8 +29,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);/* Adjust opacity as needed */
-  z-index: -3; /* Ensure it sits above the background but below your content */
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -3;
 }
 
 
@@ -43,6 +42,8 @@
 }
 
 .cta-button {
+  position: relative;
+  overflow: hidden;
   background-color: rgb(98, 34, 204);
   border-radius: 8px;
   color: white;
@@ -50,7 +51,33 @@
   padding: 17px 60px;
   margin-top: 52px;
   border: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: inherit;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.cta-button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cta-button:hover {
+  color: rgb(0, 0, 0);
+}
+
 
 .search {
   background-color: transparent;
@@ -156,8 +183,51 @@
   z-index: 1;
 }
 
+.slides-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
 
+.slider-dots {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 70px;
+  display: flex;
+  gap: 10px;
+}
 
+.slide1-dot, .slide2-dot, .slide3-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(110, 110, 110);
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
 
+.slider-dots > div.active {
+  background-color: transparent;
+  border: 1px solid white;
+}

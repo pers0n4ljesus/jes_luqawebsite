@@ -42,6 +42,7 @@
   width: 100%;
   padding: 0px 0px 66px 0px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
 }
 
 .service-section-card {
@@ -59,6 +60,7 @@
 .service-section-cta {
   text-transform: uppercase;
   padding: 48px 0px 51px 0px;
+  z-index: 1;
 }
 
 .floating-shape {
@@ -70,4 +72,25 @@
   opacity: 0.4;
   z-index: 0;
   filter: brightness(0) saturate(100%) invert(18%) sepia(84%) saturate(658%) hue-rotate(228deg);
+}
+
+.service-icons {
+  height: 64px;
+  width: 64px;
+  margin-bottom: 21px;
+  transition: transform 2s ease, filter 2s ease;
+  /* Remove any filter so it displays normally by default */
+  filter: none;
+}
+
+.service-icons:hover {
+  transform: rotateY(360deg);
+  /* brightness(0) makes the element black; inverting that turns black into white */
+  filter: brightness(0) invert(1);
+}
+
+
+.service-title:hover {
+  color: #6222cc;
+  transition: 0.4s ease;
 }
