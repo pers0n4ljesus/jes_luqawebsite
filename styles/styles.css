@@ -148,6 +148,12 @@ h6 {
   line-height: 36px
 }
 
+.h70 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 80px;
+}
+
 .divider, .divider2 {
   border: none;
   height: 1px;
