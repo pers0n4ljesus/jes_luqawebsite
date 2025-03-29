@@ -103,3 +103,7 @@
 .stats-icon-container:hover .stats-icon {
   transform: scale(1.15625);
 }
+
+.benefits-image-container {
+  display: flex;
+}
