@@ -112,6 +112,10 @@
   display: flex;
 }
 
+.benefits-image {
+  filter: sepia(1) hue-rotate(220deg) brightness(0.75);
+}
+
 .benefits-image-container {
   position: relative;
   display: flex;

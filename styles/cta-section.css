@@ -153,4 +153,23 @@
 
 .business-icon-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6222cc;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
+
+.business-icon-container img {
+  width: 64px;
+  height: 64px;
+  filter: invert(1);
+  transition: transform 0.6s ease-in-out;
+}
+
+.business-icon-container:hover img {
+  transform: scale(.85);
+}
+
+
