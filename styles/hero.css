@@ -135,6 +135,7 @@
   width: 160px;
   gap: 10px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .hero-slider-buttons img {

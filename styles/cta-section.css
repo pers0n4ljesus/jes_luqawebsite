@@ -67,6 +67,37 @@
   border-radius: 8px;
 }
 
+.cta-window-content-card-container {
+  display: flex;
+  }
+
+.cta-window-content-card-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.tick-container {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  margin-right: 20px;
+  margin-top: 7px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f4f9;
+  transition: 0.4s ease-in-out;
+}
+
+.tick-container:hover {
+  background-color: #6222cc;
+}
+
+.tick-container:hover img {
+  filter: grayscale(100%) invert(1) brightness(150%);
+}
+
+
 .cta-window-content-card {
   padding-bottom: 36px;
   gap: 12px;
@@ -74,6 +105,11 @@
 
 .cta-window-content-left {
   padding-left: 76px;
+}
+
+.cta-window-content-left img {
+  width: 64px;
+  height: 64px;
 }
 
 .border-bottom {
