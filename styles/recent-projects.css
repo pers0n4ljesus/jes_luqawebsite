@@ -29,6 +29,8 @@
 
 .recent-projects-cards img {
   display: block;
+  filter: grayscale(100%) sepia(1) hue-rotate(220deg) brightness(0.9) saturate(30%);
+  transition: all 0.4s ease-in-out;
 }
 
 .portrait {
@@ -42,3 +44,71 @@
   height: 380px;
   border-radius: 8px;
 }
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  background: rgb(0, 0, 0);
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 36px 48px;
+  box-sizing: border-box;
+  text-align: start;
+  gap: 8px;
+}
+
+.project-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+.project-card:hover .image-overlay {
+  transform: translateY(0);
+}
+
+.portrait, .landscape {
+  transition: transform 0.4s ease-in-out;
+}
+
+.portrait {
+  width: 270px;
+  height: 480px;
+}
+
+.landscape {
+  width: 570px;
+  height: 380px;
+}
+
+.line-height-24{
+  line-height: 24px;
+  height: 48px;
+}
+
+.spaced-underline {
+  border-bottom: 1px solid #6222cc;
+  padding-bottom: 2px;
+}
+
+.height-39 {
+  height: 39%;
+}
+
+.height-45 {
+  height: 45%;
+}
+

@@ -40,6 +40,8 @@ setInterval(() => {
 
 
 
+
+
 //Animating hero section
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
