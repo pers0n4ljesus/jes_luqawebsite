@@ -98,7 +98,7 @@
   z-index: 1000;
   background-color: #000;
   color: #fff;
-  transform: translateY(-100%); /* Hide off-screen initially */
+  transform: translateY(-100%);
 }
 
 
