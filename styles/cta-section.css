@@ -45,11 +45,42 @@
   justify-content: center;
   align-items: center;
 }
-
 .cta-tab-buttons {
+  position: relative;
   background-color: #6222cc;
   padding: 40px 0px;
+  cursor: pointer;
+  overflow: hidden;
 }
+
+.cta-tab-buttons::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: white;
+  transition: height 0.4s ease-in-out;
+  z-index: 1;
+  -webkit-transition: height 0.4s ease-in-out;
+}
+
+.cta-tab-buttons p {
+  position: relative;
+  z-index: 2;
+  transition: color 0.1s ease 0.1s;
+}
+
+.cta-tab-buttons:hover::before {
+  height: 100%;
+}
+
+.cta-tab-buttons:hover p {
+  color: #6222cc;
+}
+
+
 
 .cta-window {
   display: grid;
@@ -207,5 +238,6 @@
 .business-icon-container:hover img {
   transform: scale(.85);
 }
+
 
 
