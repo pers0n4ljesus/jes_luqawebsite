@@ -14,7 +14,7 @@ function animateElements() {
   // Pink 2 element - Delayed after Pink element
   gsap.fromTo(".pink-bg-element2",
     { y: "-100vh", x: "120vh", opacity: 0, rotate: 310 },
-    { y: 0, x:0, opacity: 1, rotate: 310, duration: 2.8, ease: "power4.out", delay: 1.5 }
+    { y: 0, x:0, opacity: 1, rotate: 310, duration: 2.8, ease: "power4.out", delay: 1 }
   );
 }
 
@@ -44,18 +44,17 @@ setInterval(() => {
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   
-  const animatedEls = document.querySelectorAll(".hero-bg, h3, .hero-text, .cta-button, .hero-slider-buttons");
+  const animatedEls = document.querySelectorAll("h3, .hero-text, .cta-button, .hero-slider-buttons");
   animatedEls.forEach(el => {
     el.style.willChange = "transform, opacity";
   });
   
   const slides = document.querySelectorAll(".hero-slide");
-  const dots = document.querySelectorAll(".slider-dots > div"); // assuming your dot elements are direct children
+  const dots = document.querySelectorAll(".slider-dots > div");
   let currentIndex = 0;
   const totalSlides = slides.length;
   let autoLoop;
 
-  // Function to update dot states based on currentIndex
   const updateDots = () => {
     dots.forEach(dot => dot.classList.remove("active"));
     if (dots[currentIndex]) {
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animateSlideIn = (slide) => {
     const tl = gsap.timeline();
-    tl.fromTo(slide.querySelector(".hero-bg"), { scale: 1 }, { scale: 1.15, ease: "power3.out", duration: 4 }, 0);
+    tl.fromTo(slide.querySelector(".hero-bg"), { scale: 1 }, { scale: 1.15, ease: "power3.out", duration: 4, force3D: true, transformOrigin: "center center" }, 0);
     tl.fromTo(slide.querySelector("h3"), { y: -90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 0.5);
     tl.fromTo(slide.querySelector(".hero-text"), { y: 90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 1);
     tl.fromTo(slide.querySelector(".cta-button"), { y: -90, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" }, 1.5);
@@ -125,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   startAutoLoop();
-  // Animate the first slide and update dots on page load
   animateSlideIn(slides[currentIndex]);
   updateDots();
 });
