@@ -67,6 +67,7 @@
 .footer-cols {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .footer-headings {
@@ -120,5 +121,34 @@
   gap: 25px;
 }
 
+.footer-cols img {
+  width: 18px;
+  height: 18px;
+  padding-right: 10px;
+}
 
+.footer-center-align {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.footer-center-align .mail{
+  width: 20px;
+  height: 20px;
+}
+
+.location-div {
+  align-items: start;
+}
+
+
+.agree-row, .enter-email{
+  display: flex;
+  justify-content: space-between;
+}
+
+.agree-row img {
+  padding-right: 4px;
+}
 
