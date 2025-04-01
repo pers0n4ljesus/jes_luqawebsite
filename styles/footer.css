@@ -110,5 +110,15 @@
   color: rgb(160, 155, 170);
 }
 
+.footer-header-logos img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-header-logos {
+  display: flex;
+  gap: 25px;
+}
+
 
 
