@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".cta-tab-buttons");
   const contentContainer = document.querySelector(".cta-window-content");
   const leftContent = document.querySelector(".cta-window-content-left p");
+  const leftIcon = document.querySelector(".cta-window-content-left img");
 
-  // Define content for each tab
   const tabData = {
     software: {
       content: `
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `,
       left: "We have over 2 years of experience",
+      icon: "./assets/icons/experience.svg"
     },
     cloud: {
       content: `
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `,
       left: "Secure and scalable cloud solutions",
+      icon: "./assets/icons/cloud.svg"
     },
     digital: {
       content: `
@@ -73,36 +75,36 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `,
       left: "Leading digital transformation",
+      icon: "./assets/icons/ai.svg"
     },
   };
 
-  // Function to switch content
   function switchTab(tabKey) {
-    // Remove "active" class from all tabs
     tabs.forEach(tab => tab.classList.remove("active"));
     
-    // Add "active" class to the selected tab
     document.querySelector(`[data-tab="${tabKey}"]`).classList.add("active");
 
-    // Apply animation before updating content
     contentContainer.style.opacity = "0";
     leftContent.style.opacity = "0";
     contentContainer.style.transform = "translateY(20px)";
     leftContent.style.transform = "translateY(20px)";
+    leftIcon.style.opacity = "0";
+    leftIcon.style.transform = "translateY(20px)";
 
     setTimeout(() => {
       contentContainer.innerHTML = tabData[tabKey].content;
       leftContent.textContent = tabData[tabKey].left;
+      leftIcon.src = tabData[tabKey].icon;
 
-      // Reapply animation
       contentContainer.style.opacity = "1";
       leftContent.style.opacity = "1";
+      leftIcon.style.opacity = "1";
       contentContainer.style.transform = "translateY(0)";
       leftContent.style.transform = "translateY(0)";
+      leftIcon.style.transform = "translateY(0)";
     }, 300);
   }
 
-  // Attach event listeners
   tabs.forEach(tab => {
     tab.addEventListener("click", function () {
       const tabKey = this.getAttribute("data-tab");
@@ -110,6 +112,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Set default tab on page load
   switchTab("software");
 });
