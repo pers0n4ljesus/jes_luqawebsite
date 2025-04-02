@@ -82,7 +82,6 @@
   border: none;
   font-size: 15px;
   font-weight: 600;
-  margin-top: 20px;
   color: rgb(160, 155, 170);
 }
 
@@ -149,9 +148,14 @@
 .agree-row, .enter-email{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .agree-row img {
   padding-right: 4px;
+}
+
+.enter-email {
+  margin: 20px 0px 0px 0px;
 }
 

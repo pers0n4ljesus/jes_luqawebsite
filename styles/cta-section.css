@@ -25,7 +25,6 @@
   z-index: -1;
 }
 
-
 .cta-window-container {
   position: absolute;
   bottom: -784px;
@@ -72,6 +71,7 @@
   transition: color 0.1s ease 0.1s;
 }
 
+/* Hover styles */
 .cta-tab-buttons:hover::before {
   height: 100%;
 }
@@ -80,7 +80,14 @@
   color: #6222cc;
 }
 
+/* Active tab styles */
+.cta-tab-buttons.active::before {
+  height: 100%;
+}
 
+.cta-tab-buttons.active p {
+  color: #6222cc;
+}
 
 .cta-window {
   display: grid;
@@ -100,7 +107,7 @@
 
 .cta-window-content-card-container {
   display: flex;
-  }
+}
 
 .cta-window-content-card-container img {
   width: 40px;
@@ -127,7 +134,6 @@
 .tick-container:hover img {
   filter: grayscale(100%) invert(1) brightness(150%);
 }
-
 
 .cta-window-content-card {
   padding-bottom: 36px;
@@ -184,7 +190,6 @@
   object-fit: cover;
 }
 
-
 .cta-section-bottom {
   background-color: #6222cc;
   display: flex;
@@ -239,5 +244,25 @@
   transform: scale(.85);
 }
 
+/* NEW: Animation for Changing Tab Content */
+.cta-window-content,
+.cta-window-content-left p {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
 
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s forwards;
+}
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
