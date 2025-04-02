@@ -37,10 +37,10 @@
         </a>
         <nav class="navbar">
           <ul class="navbar-links text-bold-500">
-            <li>ABOUT</li>
-            <li>SERVICES</li>
-            <li>PROJECTS</li>
-            <li>CONTACT US</li>
+            <li data-section="about">ABOUT</li>
+            <li data-section="services">SERVICES</li>
+            <li data-section="projects">PROJECTS</li>
+            <li data-section="contact">CONTACT US</li>
           </ul>
         </nav>
       </div>
@@ -65,10 +65,10 @@
         </a>
         <nav class="navbar">
           <ul class="navbar-links text-bold-500">
-            <li>ABOUT</li>
-            <li>SERVICES</li>
-            <li>PROJECTS</li>
-            <li>CONTACT US</li>
+            <li data-section="about">ABOUT</li>
+            <li data-section="services">SERVICES</li>
+            <li data-section="projects">PROJECTS</li>
+            <li data-section="contact">CONTACT US</li>
           </ul>
         </nav>
       </div>
@@ -134,7 +134,7 @@
     
     
 
-    <div class="service-section-container">
+    <section id="services" class="service-section-container">
       <img class="floating-shape" src="./assets/shapes/services-one-shape.png" alt="Service Image"/>
       <div class="service-section">
         <div class="service-section-header">
@@ -174,9 +174,9 @@
           <span class="text-underline service-title">Find Your Solution</span>
         </h4>
       </div>
-    </div>
+    </section>
 
-    <div class="know-us-section-container">
+    <section id="about" class="know-us-section-container">
       <div class="know-us-section-margin">
         <div class="know-us-section">
           <h5>GET TO KNOW US</h5>
@@ -188,9 +188,9 @@
         <div class="get-to-know-right-tex-big">LUQA</div>
 
       </div>
-    </div>
+    </section>
 
-    <div class="recent-projects-section-container">
+    <section id="projects" class="recent-projects-section-container">
       <div class="recent-projects-section">
         <h5>RECENT PROJECTS</h5>
         <h2 class="black text-start recent-projects-heading">WORK SHOWCASE</h2>
@@ -240,7 +240,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="projects-overview-section-container">
       <div class="benefits-container">
@@ -460,6 +460,7 @@
     <script src="./assets/scripts/gsap.js"></script>
     <script src="./assets/scripts/footer.js"></script>
     <script src="./assets/scripts/cta-section.js"></script>
+    <script src="./assets/scripts/navbar.js"></script>
 
   </body>
 </html>

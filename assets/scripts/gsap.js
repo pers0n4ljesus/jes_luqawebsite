@@ -134,29 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//Animating sticky header
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
 
-  ScrollTrigger.create({
-    trigger: ".navbar-container",
-    start: "bottom top",
-    onEnter: () => {
-      gsap.to(".sticky-header", {
-        y: "0%", 
-        duration: 0.5,
-        ease: "power2.out"
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to(".sticky-header", {
-        y: "-100%", 
-        duration: 0.5,
-        ease: "power2.out"
-      });
-    }
-  });
-});
 
 
 //Animating floating shape

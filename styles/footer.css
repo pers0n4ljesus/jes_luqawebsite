@@ -73,6 +73,27 @@
   justify-content: center;
 }
 
+.footer-cols p {
+  position: relative;
+  cursor: pointer;
+}
+
+.footer-cols p::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-cols p:hover::after,
+.footer-cols p.active::after {
+  width: 100%;
+}
+
 .footer-headings {
   margin-bottom: 23px;
 }
@@ -157,5 +178,9 @@
 
 .enter-email {
   margin: 20px 0px 0px 0px;
+}
+
+.enter-email img {
+  cursor: pointer;
 }
 
