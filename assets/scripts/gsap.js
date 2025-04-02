@@ -151,3 +151,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// First, set up the initial positions and animation
+const ctaAnimation = () => {
+  // Create individual timelines for better control
+  const pinkLeftTL = gsap.timeline({ repeat: -1, yoyo: true });
+  const pinkRightTL = gsap.timeline({ repeat: -1, yoyo: true });
+  const blueRightTL = gsap.timeline({ repeat: -1, yoyo: true });
+
+  // Animate pink-left element
+  pinkLeftTL.to(".pink-left", {
+    duration: 2,
+    y: "+=20",
+    x: "+=10",
+    rotation: "+=2",
+    ease: "power1.easeInOut",
+  });
+
+  // Animate pink-right element
+  pinkRightTL.to(".pink-right", {
+    duration: 2.2,
+    y: "-=15",
+    x: "+=15",
+    rotation: "-=1",
+    ease: "power1.easeInOut",
+    delay: 0.3
+  });
+
+  // Animate blue-right element
+  blueRightTL.to(".blue-right", {
+    duration: 2.5,
+    y: "+=25",
+    x: "-=10",
+    rotation: "+=1.5",
+    ease: "power1.easeInOut",
+    delay: 0.5
+  });
+};
+
+// Start animation when document loads
+document.addEventListener("DOMContentLoaded", ctaAnimation);
+
+
+
+
