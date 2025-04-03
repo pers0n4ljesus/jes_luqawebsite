@@ -14,7 +14,7 @@ function animateElements() {
   // Pink 2 element - Delayed after Pink element
   gsap.fromTo(".pink-bg-element2",
     { y: "-100vh", x: "120vh", opacity: 0, rotate: 310 },
-    { y: 0, x:0, opacity: 1, rotate: 310, duration: 2.8, ease: "power4.out", delay: 1 }
+    { y: 0, x:0, opacity: 1, rotate: 310, duration: 2, ease: "power4.out", delay: 1 }
   );
 }
 

@@ -46,8 +46,6 @@
   background-color: white;
   border-radius: 10px 0px 0px 10px;
   position: absolute;
-  left: calc(50% - 602px);  /* Half of 1170px */
-  width: calc(100vw - (50% - 585px));
   box-sizing: border-box;
   overflow: hidden;
 }
