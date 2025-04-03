@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./styles/projects-overview.css" />
     <link rel="stylesheet" href="./styles/cta-section.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -46,7 +47,9 @@
             <li data-section="about">ABOUT</li>
             <li data-section="services">SERVICES</li>
             <li data-section="projects">PROJECTS</li>
-            <li data-section="contact">CONTACT US</li>
+            <li data-section="contact">
+              <a href="contact-us.html">CONTACT US</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -74,7 +77,9 @@
             <li data-section="about">ABOUT</li>
             <li data-section="services">SERVICES</li>
             <li data-section="projects">PROJECTS</li>
-            <li data-section="contact">CONTACT US</li>
+            <li data-section="contact">
+              <a href="contact-us.html">CONTACT US</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -91,6 +96,52 @@
         </div>
       </div>
     </header>
+
+    <!-- <nav class="mobile-nav-fixed">
+      <a class="logo" href="#">
+        <img src="./assets/resources/logo-1.png" alt="LUQA" />
+      </a>
+      <img src="./assets/icons/hamburger.svg" class="hamburger" alt="Hamburger Icon"/>
+    </nav> -->
+
+    <nav class="mobile-nav">
+      <ul>
+        <li>
+          <div class="logo-section">
+            <a class="logo" href="#">
+              <img src="./assets/resources/logo-1.png" alt="LUQA" />
+            </a>
+            <button nav>x</button>
+          </div>
+        </li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Projects</li>
+        <li>Contact Us</li>
+      </ul>
+      <div>
+        <div>
+          <div>
+            <img>
+            <p>info@luqa.in</p>
+          </div>
+          <div>
+            <img>
+            <p>+91 1234567890</p>
+        </div>
+      </div>
+      <div class="footer-header-logos">
+        <a href="https://www.linkedin.com/company/luqatech" target="_blank">
+          <img src="./assets/icons/linkedin.svg" alt="LinkedIn Icon"/>
+        </a>
+        <a href="https://www.facebook.com/luqatech/" target="_blank">
+          <img src="./assets/icons/facebook.svg" alt="Facebook Icon"/>
+        </a>
+        <a href="https://www.instagram.com/luqatech/" target="_blank">
+          <img src="./assets/icons/instagram.svg" alt="Instagram Icon"/>
+        </a>
+      </div>
+    </nav>
 
     <div class="hero-section">
       <div class="slides-container">
@@ -468,6 +519,7 @@
     <script src="./assets/scripts/footer.js"></script>
     <script src="./assets/scripts/cta-section.js"></script>
     <script src="./assets/scripts/navbar.js"></script>
+    <script src="./assets/scripts/element-animations.js"></script>
 
   </body>
 </html>

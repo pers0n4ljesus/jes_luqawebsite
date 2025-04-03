@@ -3,6 +3,294 @@
   <head>
     <meta charset="UTF-8">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUQA | Digital Transformation & IT Consulting Solutions</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/projects-overview.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/contact-us.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    
+
+
   </head>
+  <body>
+    <header class="navbar-container">
+      <div class="right-section">
+        <a class="logo" href="#">
+          <img src="./assets/resources/logo-1.png" alt="LUQA" />
+        </a>
+        <nav class="navbar">
+          <ul class="navbar-links text-bold-500">
+            <li>
+              <a href="index.html">HOME
+              </a>
+            </li>
+            <li>
+              <a href="contact-us.html">CONTACT US</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="left-section">
+        <button class="search">
+          <img src="./assets/icons/search.svg" class="search-icon" alt="Search Icon"/>
+        </button>
+        <div class="cta-container">
+          <img src="./assets/icons/message-us.svg" class="cta-icon" alt="Message Us Icon"/>
+          <div class="cta">
+            <p class="text-start">CALL ANYTIME</p>
+            <P class="h18 text-start">+91-9895709543</P>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header class="sticky-header">
+      <div class="right-section">
+        <a class="logo" href="#">
+          <img src="./assets/resources/logo-1.png" alt="LUQA" />
+        </a>
+        <nav class="navbar">
+          <ul class="navbar-links text-bold-500">
+            <li data-section="about">HOME</li>
+            <li data-section="contact">CONTACT US</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="left-section">
+        <button class="search">
+          <img src="./assets/icons/search.svg" class="search-icon" alt="Search Icon"/>
+        </button>
+        <div class="cta-container">
+          <img src="./assets/icons/message-us.svg" class="cta-icon" alt="Message Us Icon"/>
+          <div class="cta">
+            <p class="text-start">CALL ANYTIME</p>
+            <P class="h18 text-start">+91-9895709543</P>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <div class="hero-section contact-us-hero-section">
+      <div class="slides-container">
+        <div class="hero-slide active" >
+          <div class="hero-bg" style="background: url('./assets/backgrounds/page-header-bg.jpg') center/cover no-repeat;"></div>
+          <div class="contact-us-hero-sub-heading h14">
+            <p>HOME</p>
+            <p>-</p>
+            <p>CONTACT</p>
+          </div>
+          <p class="h60">CONTACT</p>
+        </div>
+      </div>
+    
+      <div class="pink-bg-element"></div>
+      <div class="black-bg-element"></div>
+      <div class="pink-bg-element2"></div>
+    </div>
+
+    <div class="contact-middle-section">
+      <div class="contact-middle-card">
+        <div class="stats-icon-container">
+          <img class="stats-icon" src="./assets/icons/chat.svg" alt="Award Icon"/>
+        </div>
+        <p class="text-bold-500 h30 middle-card-h1">ABOUT</p>
+        <p class="h18 text-gray middle-card-h2 dm-sans">We're driving digital transformation for modern enterprises</p>
+      </div>
+
+      <div class="contact-middle-card">
+        <div class="stats-icon-container">
+          <img class="stats-icon icon64" src="./assets/icons/map-pin.svg" alt="Award Icon"/>
+        </div>
+        <p class="text-bold-500 h30 middle-card-h1">ADDRESS
+        </p>
+        <p class="h18 text-gray middle-card-h2 dm-sans">1st Floor Carnival InfoPark, Infopark Campus Kochi, India
+
+        </p>
+      </div>
+
+      <div class="contact-middle-card">
+        <div class="stats-icon-container">
+          <img class="stats-icon" src="./assets/icons/contact.svg" alt="Award Icon"/>
+        </div>
+        <p class="text-bold-500 h30 middle-card-h1">CONTACT</p>
+        <p class="h18 text-gray middle-card-h2 dm-sans">info@luqa.in
+          <br>
+          +91-9895709543
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-us-form-section">
+      <div class="form-banner">
+        <h5 class="text-upper letter-spacing-12 text-gray spaced-underline1">contact with us</h3>
+        <h2 class="black">have any questions?</h2>
+      </div>
+      <div class="contact-form-input-row">
+        <input class="contact-form-input" placeholder="Your Name">
+        <input class="contact-form-input" placeholder="Email address">
+      </div>
+      <div class="contact-form-input-row">
+        <input class="contact-form-input" placeholder="Phone Number">
+        <input class="contact-form-input" placeholder="Subject">
+      </div>
+      <div class="contact-form-input-row">
+        <input class="contact-form-input message" placeholder="Write a message">
+      </div>
+      <button class="cta-button black margin-clear">SEND A MESSAGE</button>
+
+    </div>
+
+    <footer>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15716.283510918844!2d76.3618477!3d10.0110043!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c9d4968ed6b%3A0xac7018beb464c0b!2sInfopark%20Kochi!5e0!3m2!1sen!2sin!4v1732864166708!5m2!1sen!2sin" 
+          class="google-map__one"
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </footer>
+    
+    
+
+    <div class="footer-section margin-0">
+      <div class="footer-section-header">
+        <div class="footer-header-left-section">
+          <a class="logo" href="#">
+            <img src="./assets/resources/logo-1.png" alt="LUQA" />
+          </a>
+          <p class="h24 text-upper">Let's work together just drop me a line - <a><span class="violette text-underline">info@luqa.in</span></a>
+          </p>
+        </div>
+        <div class="footer-header-logos">
+          <a href="https://www.linkedin.com/company/luqatech" target="_blank">
+            <img src="./assets/icons/linkedin.svg" alt="LinkedIn Icon"/>
+          </a>
+          <a href="https://www.facebook.com/luqatech/" target="_blank">
+            <img src="./assets/icons/facebook.svg" alt="Facebook Icon"/>
+          </a>
+          <a href="https://www.instagram.com/luqatech/" target="_blank">
+            <img src="./assets/icons/instagram.svg" alt="Instagram Icon"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-middle-section">
+       <div class="footer-middle-section-container">
+        <div class="text-start">
+          <p class="h20 text-upper footer-headings">About</p>
+          <div class="footer-cols h15 dm-sans text-gray-footer" style="width: 270px">
+            <p>We're driving digital transformation for modern enterprises</p>
+            <hr class="divider">
+            <div class="footer-center-align">
+              <img src="./assets/icons/phone.svg" alt="Phone Icon"/>
+              <a href="tel:+91-9895709543" style="text-decoration: none; color: inherit;">
+                +91-9895709543 / +971 45701444
+              </a>
+            </div>
+
+           <div class="footer-center-align">
+            <img class="mail" src="./assets/icons/mail.svg" alt="Mail Icon"/>
+            <a href="mailto:info@luqa.in" style="text-decoration: none; color: inherit;">
+              info@luq.in
+            </a>
+           </div>
+            <div class="footer-center-align">
+              <img src="./assets/icons/map-pin.svg" alt="Location Icon"/>
+              <div>
+                <p><strong>India Office:</strong></p>
+                <p>1st Floor Carnival InfoPark,<br>Infopark Campus Kochi, India</p>
+                <p><strong>UAE Office:</strong></p>
+                <p>M01, Sarah Building, Garhoud,<br>Dubai, UAE +971 45701444</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-start">
+          <p class="h20 text-upper footer-headings">Links</p>
+          <div class="footer-cols h15 dm-sans text-gray-footer">
+            <p>About Us</p>
+            <p>Our Mission</p>
+            <p>Meet the Team</p>
+            <p>Our Projects</p>
+            <p>Contact</p>
+          </div>
+        </div>
+        <div class="text-start">
+          <p class="h20 text-upper footer-headings">Explore</p>
+          <div class="footer-cols h15 dm-sans text-gray-footer">
+            <p>What We Offer</p>
+            <p>Our Story</p>
+            <p>Latest News</p>
+            <p>Help Center</p>
+          </div>
+        </div>
+
+        <div class="newsletter-box text-start">
+          <p class="h20 text-upper">Newsletter</p>
+          <div>
+            <div class="enter-email">
+              <input class="footer-email-input" placeholder="Email address">
+              <img src="./assets/icons/telegram.svg" alt="Sent icon">
+            </div>
+            <hr class="divider2">
+          </div>
+          <div class="agree-row">
+            <img src="./assets/icons/circle-check.svg" alt="Tick icon">
+            <p class="h15 dm-sans text-gray-footer">
+              <strong>I agree to all your terms and policies</strong>
+            </p>
+          </div>
+        </div>
+       </div>
+       <div class="footer-bottom">
+        <hr class="divider">
+
+        <div class="footer-bottom-container h15 dm-sans text-gray-footer">
+          <p>© Copyrights, 2021 luqatech.com</p>
+          <div class="footer-bottom-right-section">
+            <a href="_">Terms & Conditions</a>
+            <a href="_">Privacy Policy</a>
+          </div>
+        </div>
+       </div>
+      </div>
+
+
+    </div>
+
+
+
+
+    <script src="./assets/scripts/footer.js"></script>
+    <script src="./assets/scripts/navbar.js"></script>    
+    <script src="./assets/scripts/element-animations.js"></script>
+    <script src="./assets/scripts/gsap.js"></script>
+
+
+
+
+
+  </body>
 </html>

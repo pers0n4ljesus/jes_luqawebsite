@@ -9,6 +9,11 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 
 h1, h2, h3, h4, h5, h6, p, .h24 {
@@ -97,7 +102,7 @@ h6 {
 }
 
 .text-gray-footer {
-  color: rgb(160, 155, 170);
+  color: rgb(114, 109, 123);
 }
 
 .text-upper{
@@ -139,10 +144,23 @@ h6 {
   line-height: 48px;
 }
 
+.h14 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .h15 {
   font-size: 15px;
   font-weight: 500;
   line-height: 36px
+}
+
+.h60 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  height: 70px;
+  line-height: 70px;
 }
 
 .h70 {
@@ -166,6 +184,16 @@ h6 {
 
 .letter-spacing-12 {
   letter-spacing: 1.2px;
+}
+
+.spaced-underline {
+  border-bottom: 1px solid #6222cc;
+  padding-bottom: 2px;
+}
+
+.spaced-underline1 {
+  border-bottom: 1px solid #6222cc;
+  padding-bottom: 1px;
 }
 
 

@@ -1,0 +1,137 @@
+.contact-us-hero-sub-heading {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-us-hero-section {
+  height: 563px;
+}
+
+.contact-middle-section {
+  margin: 120px 0px;
+  display: flex;
+  width: 1170px;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: transparent;
+}
+
+.contact-middle-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  background-color: rgb(246, 244, 249);
+  padding: 50px 90px;
+  gap: 20px;
+}
+
+.middle-card-h1 {
+  color: rgb(4, 0, 11);
+  line-height: 40px;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.middle-card-h2 {
+  font-weight: 400;
+  line-height: 30px;
+  height: 90px;
+}
+
+.contact-form-input {
+  background-color: rgb(246, 244, 249);
+  border: none;
+  padding: 1px 30px;
+  border-radius: 8px;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-weight: 400;
+  height: 68px;
+  width: 100%;
+  outline: none;
+}
+
+.contact-form-input:focus {
+  border: 1px solid #6200ea50;
+}
+
+.icon64 {
+  width: 64px;
+  height: 64px;
+}
+
+
+
+
+.contact-us-form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  gap: 10px;
+  padding-bottom: 120px;
+}
+
+.form-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-wrap: none;
+  margin-bottom: 50px;
+}
+
+.contact-form-input-row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.message {
+  height: 127px;
+  padding: 18px 30px;
+}
+
+.margin-clear {
+  margin: 0;
+}
+
+
+.map-container {
+  width: 100vw;  /* 100% of the viewport width */
+  height: 555px; /* Adjust height as needed */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cta-button.black {
+  background-color: rgb(98, 34, 204);
+}
+
+.cta-button.black::after {
+  background: black;
+}
+
+.cta-button.black:hover {
+  color: white;
+}
+
+
+
+
+

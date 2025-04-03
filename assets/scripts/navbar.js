@@ -35,32 +35,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Click event for smooth scrolling
+  // Click event for smooth scrolling (only for internal sections)
   navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
       const sectionId = this.dataset.section;
       const section = document.getElementById(sectionId);
+
       if (section) {
+        // Only prevent default if it's an internal section
+        e.preventDefault();
+
         // Temporarily disable observer during click
         observer.unobserve(section);
         section.scrollIntoView({ behavior: "smooth", block: "start" });
         setTimeout(() => observer.observe(section), 1000);
+      } else if (sectionId === "contact") {
+        // Allow normal navigation for "Contact Us"
+        window.location.href = "contact-us.html";
       }
     });
   });
 
-  // Intersection Observer configuration
+  // Intersection Observer configuration (same as before)
   const observerOptions = {
     root: null,
-    rootMargin: "-50px 0px -50% 0px", // Adjust this to fine-tune detection
+    rootMargin: "-50px 0px -50% 0px",
     threshold: 0.2
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const sectionId = entry.target.id;
-      
+
       if (entry.isIntersecting) {
         currentActiveSection = sectionId;
       } else if (currentActiveSection === sectionId) {
@@ -68,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Find the section that's most centered in the viewport
+    // Find the most centered section
     const visibleSections = Array.from(sections).filter(section => {
       const rect = section.getBoundingClientRect();
       return rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5;
@@ -77,43 +83,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (visibleSections.length > 0) {
       const mostVisible = visibleSections.reduce((closest, section) => {
         const rect = section.getBoundingClientRect();
-        const centerOffset = Math.abs(rect.top + rect.height/2 - window.innerHeight/2);
+        const centerOffset = Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2);
         return centerOffset < closest.offset ? 
           { section: section, offset: centerOffset } : closest;
       }, { section: visibleSections[0], offset: Infinity });
 
       setActiveLink(mostVisible.section.id);
     } else if (currentActiveSection) {
-      // Fallback to last known active section
       setActiveLink(currentActiveSection);
     } else {
       navLinks.forEach(link => link.classList.remove("active"));
     }
   }, observerOptions);
 
-  // Observe all sections
   sections.forEach(section => observer.observe(section));
-
-  // Handle scroll events for edge cases
-  let isScrolling = false;
-  window.addEventListener("scroll", () => {
-    isScrolling = true;
-  });
-
-  // Check every 100ms if scrolling has stopped
-  setInterval(() => {
-    if (isScrolling) {
-      isScrolling = false;
-      // Force update when scrolling stops
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
-          setActiveLink(section.id);
-        }
-      });
-    }
-  }, 100);
 });
+
+
 
 
 
