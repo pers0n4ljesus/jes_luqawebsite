@@ -107,9 +107,6 @@
   transform: scale(1.15625);
 }
 
-.benefits-image-container {
-  display: flex;
-}
 
 .benefits-image {
   filter: sepia(1) hue-rotate(220deg) brightness(0.75);

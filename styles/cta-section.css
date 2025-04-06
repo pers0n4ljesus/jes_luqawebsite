@@ -50,6 +50,7 @@
   padding: 40px 0px;
   cursor: pointer;
   overflow: hidden;
+  width: 100%;
 }
 
 .cta-tab-buttons::before {
