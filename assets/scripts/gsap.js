@@ -143,4 +143,22 @@ document.addEventListener("DOMContentLoaded", ctaAnimation);
 
 
 
+//Animating stats
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+      } else {
+        entry.target.classList.remove('animate-in');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  // Observe stats container and individual stats
+  const statsElements = document.querySelectorAll('.stats-container, .stats-container .stats');
+  statsElements.forEach(el => observer.observe(el));
+});
+
+
 
