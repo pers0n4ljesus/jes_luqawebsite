@@ -489,16 +489,16 @@ button[nav] {
     padding: 0;
   }
 
-
-
-
-
-  
-
-
-
-
-
 }
 
+
+@media screen and (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-nav-fixed {
+    display: none;
+  }
+}
 
