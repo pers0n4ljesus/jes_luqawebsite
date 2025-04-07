@@ -146,10 +146,6 @@ button[nav] {
     align-items: center;
   }
 
-  .her0-bg {
-    height: 715px;
-  }
-
 
   .hero-text {
     font-size: 46px;
@@ -445,6 +441,56 @@ button[nav] {
     align-items: center;
     width: 100%;
   }
+
+
+
+
+  .contact-us-hero-section {
+    height: 538px;
+    width: 100vw;
+  }
+
+  .contact-middle-section {
+    width: calc(100vw - 30px);
+    height: fit-content;
+    flex-direction: column;
+    padding: 0px 15px;
+    margin-top: 30px;
+  }
+
+  .contact-us-form-section {
+    width: calc(100vw - 30px);
+    height: fit-content;
+    flex-direction: column;
+    padding: 0px 15px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .contact-form-input-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .form-banner {
+    height: 40px;
+  }
+
+  .footer-section-contact-us {
+    margin-top: 0px;
+  }
+
+  .contact-middle-card {
+    padding: 20px 0px;
+  }
+
+  .contact-form-input {
+    padding: 0;
+  }
+
+
+
 
 
   

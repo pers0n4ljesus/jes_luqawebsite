@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./styles/cta-section.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles/splashscreen.css" />
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -37,6 +38,11 @@
 
   </head>
   <body>
+
+    <div id="splash-screen">
+      <img src="./assets/favicons/android-chrome-192x192.png" alt="Logo" id="splash-logo">
+  </div>
+
     <header class="navbar-container">
       <div class="right-section">
         <a class="logo" href="#">
@@ -125,13 +131,17 @@
             <div class="nav-logo-div">
               <img src="./assets/icons/mail.svg">
             </div>
-            <p>info@luqa.in</p>
+            <a href="mailto:info@luqa.in" style="text-decoration: none; color: inherit;">
+              <p>info@luqa.in</p>
+            </a>
           </div>
           <div class="nav-contact-container">
             <div class="nav-logo-div">
               <img src="./assets/icons/phone.svg">
             </div>
-            <p>+91 1234567890</p>
+            <a href="tel:+91-9895709543" style="text-decoration: none; color: inherit;">
+              <p>+91 1234567890</p>
+            </a>
         </div>
       </div>
       <div class="footer-header-logos nav-logos">
@@ -524,6 +534,7 @@
     <script src="./assets/scripts/cta-section.js"></script>
     <script src="./assets/scripts/navbar.js"></script>
     <script src="./assets/scripts/element-animations.js"></script>
+    <script src="./assets/scripts/splashcreen.js"></script>
 
   </body>
 </html>
