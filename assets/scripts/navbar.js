@@ -35,28 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Click event for smooth scrolling (only for internal sections)
   navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
       const sectionId = this.dataset.section;
       const section = document.getElementById(sectionId);
 
       if (section) {
-        // Only prevent default if it's an internal section
         e.preventDefault();
 
-        // Temporarily disable observer during click
         observer.unobserve(section);
         section.scrollIntoView({ behavior: "smooth", block: "start" });
         setTimeout(() => observer.observe(section), 1000);
       } else if (sectionId === "contact") {
-        // Allow normal navigation for "Contact Us"
         window.location.href = "contact-us.html";
       }
     });
   });
 
-  // Intersection Observer configuration (same as before)
   const observerOptions = {
     root: null,
     rootMargin: "-50px 0px -50% 0px",
@@ -74,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Find the most centered section
     const visibleSections = Array.from(sections).filter(section => {
       const rect = section.getBoundingClientRect();
       return rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5;
@@ -106,26 +100,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Previous mobile nav code
-  const hamburger = document.querySelector('.hamburger');
+  const hamburgerIcons = document.querySelectorAll('.hamburger'); // both navs
   const mobileNav = document.querySelector('.mobile-nav');
   const closeButton = mobileNav.querySelector('button[nav]');
   let touchStartX = 0;
   const swipeThreshold = 50;
 
-  // Scroll functionality variables
   const navLinks = document.querySelectorAll(".navbar-links li, .mobile-nav ul li");
   const sections = document.querySelectorAll(".page-section");
   let currentActiveSection = null;
 
-  // Combined scroll functionality
   function setActiveLink(sectionId) {
     navLinks.forEach(link => {
       link.classList.toggle("active", link.dataset.section === sectionId);
     });
   }
 
-  // Click handler for both desktop and mobile nav
   navLinks.forEach(link => {
     link.addEventListener("click", function (e) {
       const sectionId = this.dataset.section;
@@ -133,13 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (section) {
         e.preventDefault();
-        
-        // Close mobile nav after click
-        if (window.innerWidth <= 768) {
-          mobileNav.classList.remove('active');
-        }
+        mobileNav.classList.remove('active'); // Close nav on click (mobile + tablet)
 
-        // Scroll logic
         observer.unobserve(section);
         section.scrollIntoView({ behavior: "smooth", block: "start" });
         setTimeout(() => observer.observe(section), 1000);
@@ -149,15 +134,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Mobile nav specific handlers
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.add('active');
+  // Handles clicks on all hamburger icons (mobile and tablet)
+  hamburgerIcons.forEach(hamburger => {
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
   });
 
   closeButton.addEventListener('click', () => {
     mobileNav.classList.remove('active');
   });
 
+  // Swipe to close (left swipe)
   mobileNav.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
   });
@@ -171,13 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Click outside to close
   mobileNav.addEventListener('click', (e) => {
     if (e.target === mobileNav) {
       mobileNav.classList.remove('active');
     }
   });
 
-  // Shared Intersection Observer logic
+  // Section observer logic for highlighting nav links
   const observerOptions = {
     root: null,
     rootMargin: "-50px 0px -50% 0px",
@@ -218,13 +207,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sections.forEach(section => observer.observe(section));
 
-  // Window resize handler
+  // Close the nav on window resize if screen gets too big
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 1024) {
       mobileNav.classList.remove('active');
     }
   });
 });
+
 
 
 

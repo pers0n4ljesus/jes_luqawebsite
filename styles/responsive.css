@@ -8,7 +8,7 @@
   padding: 15px;
   background-color: black;
   position: fixed;
-  width: calc(2/3 * 100vw);
+  width: 270px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -17,6 +17,7 @@
   overflow: hidden;
   z-index: 2000;
 }
+
 
 .mobile-nav.active {
   display: flex;
@@ -64,7 +65,8 @@ button[nav] {
   cursor: pointer;
 }
 
-.mobile-nav-fixed {
+.mobile-nav-fixed,
+.tablet-nav-fixed {
   position: fixed;
   display: none;
   height: 108px;
@@ -106,10 +108,14 @@ button[nav] {
   margin: 15px 0px;
 }
 
-
-
 .mobile-break {
   display: none;
+}
+
+
+/* Tablet-nav */
+.tablet-nav-fixed {
+
 }
 
 /* Media Querries */
@@ -524,14 +530,18 @@ button[nav] {
   .navbar-container,
   .hero-slider-buttons,
   .sticky-header,
+  .mobile-nav-fixed,
   .get-to-know-right-text-big,
   .know-us-section-container::before,
   .know-us-section-container::after {
     display: none;
   }
 
-  .mobile-nav-fixed {
-    display: none;
+  .tablet-nav-fixed {
+    display: flex;
   }
+
+  .
+
 }
 
