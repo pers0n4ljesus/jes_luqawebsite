@@ -1,34 +1,58 @@
 .mobile-nav {
   position: fixed;
-  display: none;
-  flex-direction: column; /* Ensures items stack properly */
-  height: fit-content;
-  justify-content: start;
-  align-items: start;
-  padding: 15px;
-  background-color: black;
-  position: fixed;
-  width: 270px;
   top: 0;
   left: 0;
   bottom: 0;
-  overflow: hidden; /* Ensures the nav itself doesn’t scroll */
-  padding-bottom: 100vh;
-  overflow: hidden;
+  width: 270px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+  z-index: 2001;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+
+  /* No need for height or padding-bottom hacks */
+  overflow-y: auto; /* allows scrolling inside if needed */
+}
+
+
+/* Shown when active */
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+/* Overlay */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
   z-index: 2000;
 }
 
-
-.mobile-nav.active {
-  display: flex;
+.mobile-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
+
+
 
 .mobile-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,6 +145,7 @@ button[nav] {
 /* Media Querries */
 @media screen and (max-width: 767px) {
   .navbar-container,
+  .tablet-nav-fixed,
   .hero-slider-buttons,
   .sticky-header,
   .get-to-know-right-text-big,
@@ -526,7 +551,6 @@ button[nav] {
 
 
 @media screen and (min-width: 768px) and (max-width:991px) {
-  .mobile-nav,
   .navbar-container,
   .hero-slider-buttons,
   .sticky-header,
@@ -540,8 +564,6 @@ button[nav] {
   .tablet-nav-fixed {
     display: flex;
   }
-
-  .
 
 }
 

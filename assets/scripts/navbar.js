@@ -100,8 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerIcons = document.querySelectorAll('.hamburger'); // both navs
+  const hamburgerIcons = document.querySelectorAll('.hamburger'); // For both mobile & tablet
   const mobileNav = document.querySelector('.mobile-nav');
+  const overlay = document.querySelector('.mobile-nav-overlay');
   const closeButton = mobileNav.querySelector('button[nav]');
   let touchStartX = 0;
   const swipeThreshold = 50;
@@ -123,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (section) {
         e.preventDefault();
-        mobileNav.classList.remove('active'); // Close nav on click (mobile + tablet)
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
 
         observer.unobserve(section);
         section.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -134,18 +136,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Handles clicks on all hamburger icons (mobile and tablet)
+  // Open Nav
   hamburgerIcons.forEach(hamburger => {
     hamburger.addEventListener('click', () => {
       mobileNav.classList.add('active');
+      overlay.classList.add('active');
     });
   });
 
-  closeButton.addEventListener('click', () => {
+  // Close Nav via Close Button
+  if (closeButton) {
+    closeButton.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  }
+
+  // Close Nav via Overlay Click
+  overlay.addEventListener('click', () => {
     mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
   });
 
-  // Swipe to close (left swipe)
+  // Swipe-to-Close (Left Swipe)
   mobileNav.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
   });
@@ -156,17 +169,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (deltaX < -swipeThreshold) {
       mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
     }
   });
 
-  // Click outside to close
-  mobileNav.addEventListener('click', (e) => {
-    if (e.target === mobileNav) {
+  // ESC Key to Close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
       mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
     }
   });
 
-  // Section observer logic for highlighting nav links
+  // Section Observer Logic (Highlight Active Link)
   const observerOptions = {
     root: null,
     rootMargin: "-50px 0px -50% 0px",
@@ -207,13 +222,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sections.forEach(section => observer.observe(section));
 
-  // Close the nav on window resize if screen gets too big
+  // Close nav on window resize for larger screens
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1024) {
       mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
     }
   });
 });
+
+
 
 
 
