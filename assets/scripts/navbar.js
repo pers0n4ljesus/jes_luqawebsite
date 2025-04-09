@@ -229,3 +229,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// Floating button
+const scrollBtn = document.getElementById('scrollToTopBtn');
+    const heroSection = document.getElementById('hero-section');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+
+      if (heroBottom < 0) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show', 'clicked');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      scrollBtn.classList.add('clicked');
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      // Wait for scroll to top then hide
+      setTimeout(() => {
+        scrollBtn.classList.remove('show', 'clicked');
+      }, 800);
+    });

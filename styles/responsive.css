@@ -113,11 +113,10 @@ button[nav] {
 }
 
 /* Media Querries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .navbar-container,
   .hero-slider-buttons,
   .sticky-header,
-  .mobile-break,
   .get-to-know-right-text-big,
   .know-us-section-container::before,
   .know-us-section-container::after{
@@ -126,6 +125,10 @@ button[nav] {
 
   .nav-logos {
     margin-top: 30px;
+  }
+
+  .mobile-break {
+    display: block;
   }
 
 
@@ -215,6 +218,12 @@ button[nav] {
     margin: 0px 15px 0px 15px;
   }
 
+  .service-section-left-section {
+    justify-content: start;
+    align-items: start;
+    height: 92px;
+  }
+
   .mobile-30 {
     font-size: 30px;
     height: 120px;
@@ -224,16 +233,20 @@ button[nav] {
   .service-section-card-container {
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
 
   .service-section-content {
     padding: 0px;
+    margin-bottom: 20px;
   }
 
   .service-section-card {
     align-items: center;
     border: none;
     margin: 0px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   }
 
@@ -393,6 +406,10 @@ button[nav] {
     text-align: center;
     padding: 90px 0px;
   }
+  
+  .padding-15 {
+    padding: 0px 15px;
+  }
 
   .footer-section {
     margin-top: 1500px;
@@ -417,18 +434,27 @@ button[nav] {
 
   .footer-middle-section {
     height: fit-content;
-    width: calc(100vw - 30px);
   }
 
   .footer-middle-section-container {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    width: 100%;
+    width: calc(100vw - 30px);
   }
 
   .newsletter-box {
     margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-self: center;
+    align-self: center;
+    width: calc(100vw - 70px);
+  }
+
+  .agree-row {
+    align-items: center;
+    justify-content: start;
   }
 
   .footer-bottom {
@@ -441,6 +467,7 @@ button[nav] {
     align-items: center;
     width: 100%;
   }
+
 
 
 
@@ -492,8 +519,14 @@ button[nav] {
 }
 
 
-@media screen and (min-width: 768px) {
-  .mobile-nav {
+@media screen and (min-width: 768px) and (max-width:991px) {
+  .mobile-nav,
+  .navbar-container,
+  .hero-slider-buttons,
+  .sticky-header,
+  .get-to-know-right-text-big,
+  .know-us-section-container::before,
+  .know-us-section-container::after {
     display: none;
   }
 

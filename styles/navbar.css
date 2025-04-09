@@ -95,5 +95,32 @@
   transform: translateY(-100%);
 }
 
+.floating-button-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #6222cc;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.floating-button-container.show {
+  display: flex;
+}
 
+.floating-button-container.clicked {
+  background-color: #000;
+}
+
+.floating-button {
+  width: 24px;
+  height: 24px;
+  padding-top: 2px;
+}
