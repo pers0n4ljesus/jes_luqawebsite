@@ -296,6 +296,7 @@ button[nav] {
     margin-bottom: 40px;
     height: auto;
     left: 0;
+    border-radius: 8px;
   }
 
   .know-us-section-margin {
@@ -563,6 +564,93 @@ button[nav] {
 
   .tablet-nav-fixed {
     display: flex;
+  }
+  
+
+  .service-section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 30px;
+  }
+
+  .service-section-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+  }
+
+  .service-section-card {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-title {
+    text-align: center;
+  }
+
+  .know-us-section-container {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 0;
+  }
+
+  .know-us-section-margin {
+    flex-direction: column-reverse;
+    padding: 0px 30px;
+  }
+
+  .get-to-know-us-image {
+    position: relative;
+    width: 600px;
+    margin-bottom: 40px;
+    height: auto;
+    left: 0;
+    border-radius: 8px;
+  }
+
+  .recent-projects-cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex: 1 1 calc(50% - 30px);
+  }
+
+  .portrait,
+  .landscape {
+    width: 330px;
+    height: auto;
+  }
+
+  .benefits-container {
+    flex-direction: column;
+  }
+
+
+  .stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    padding-top: 120px;
+    padding-bottom: 280px;
+    height: 100%;
+   
+  }
+
+  .projects-overview-section-container {
+    height: fit-content;
+  }
+
+  .benefits-container {
+    top: 650px;
+  }
+
+  .benefits-content-container {
+    width: 100vw;
+    justify-content: start;
   }
 
 }
