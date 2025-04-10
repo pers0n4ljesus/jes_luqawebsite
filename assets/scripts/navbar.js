@@ -264,3 +264,87 @@ const scrollBtn = document.getElementById('scrollToTopBtn');
         scrollBtn.classList.remove('show', 'clicked');
       }, 800);
     });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the two nav elements and the marker element.
+  const mobileNav = document.querySelector(".mobile-nav");
+  const tabletNav = document.querySelector(".tablet-nav-fixed");
+  const marker = document.querySelector(".pink-bg-element2");
+  
+  // Verify that all required elements exist.
+  if (!mobileNav || !tabletNav || !marker) {
+    console.error("One or more required elements (navs or marker) not found.");
+    return;
+  }
+  
+  // Define the observer options.
+  // Using root: null (viewport) and threshold: 0 to fire the callback as soon as any pixel of the marker enters or leaves.
+  const observerOptions = {
+    root: null,
+    threshold: 0
+  };
+  
+  // The Intersection Observer callback toggles the CSS class.
+  const observerCallback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Marker is in view (hero section is still in view), so show navs.
+        mobileNav.classList.remove("hidden-nav");
+        tabletNav.classList.remove("hidden-nav");
+      } else {
+        // Marker is out of view (hero section is scrolled past), hide navs.
+        mobileNav.classList.add("hidden-nav");
+        tabletNav.classList.add("hidden-nav");
+      }
+    });
+  };
+  
+  // Create the Intersection Observer and observe the marker element.
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  observer.observe(marker);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Select the hero section and the fixed nav elements.
+  const heroSection = document.querySelector('.hero-section');
+  const mobileNav = document.querySelector('.mobile-nav-fixed');
+  const tabletNav = document.querySelector('.tablet-nav-fixed');
+
+  // Check that all required elements exist.
+  if (!heroSection || !mobileNav || !tabletNav) {
+    console.error('One or more required elements were not found.');
+    return;
+  }
+
+  // Observer options: 
+  // - root: null means the viewport.
+  // - threshold: 0 fires as soon as even one pixel is visible.
+  const options = {
+    root: null,
+    threshold: 0
+  };
+
+  // Callback to toggle the nav visibility:
+  // When the hero section is entirely out of view (intersectionRatio === 0),
+  // hide the navs by adding the 'hidden-nav' class.
+  // Otherwise, remove the class to show the navs.
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio <= 0) {
+        // Hero section is completely scrolled past, hide navs
+        mobileNav.classList.add('hidden-nav');
+        tabletNav.classList.add('hidden-nav');
+      } else {
+        // Any part of hero is visible, show navs
+        mobileNav.classList.remove('hidden-nav');
+        tabletNav.classList.remove('hidden-nav');
+      }
+    });
+  };
+
+  // Create the Intersection Observer and start observing the hero section.
+  const observer = new IntersectionObserver(observerCallback, options);
+  observer.observe(heroSection);
+});
