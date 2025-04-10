@@ -199,12 +199,12 @@
   padding: 90px 80px;
   border-radius: 8px;
   position: relative;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 1000;
+  overflow: hidden;  
 }
 
 .cta-section-bottom p {
-  z-index: 1;
+  z-index: 1000;
 }
 
 
@@ -276,7 +276,7 @@
 
 .cta-section-button:hover {
   color: white;
-  background-color: transparent; /* Fix invalid 'none' value */
+  background-color: transparent;
 }
 
 
@@ -308,7 +308,6 @@
   transform: scale(.85);
 }
 
-/* NEW: Animation for Changing Tab Content */
 .cta-window-content,
 .cta-window-content-left p {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
