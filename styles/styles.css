@@ -197,4 +197,33 @@ h6 {
   padding-bottom: 1px;
 }
 
+.h23 {
+  font-family: 'DM-SANS', Arial;
+  font-size: 23px;
+}
+
+.text-purple {
+  color: #6222cc;
+}
+
+.h32 {
+  font-size: 32px;
+}
+
+.dm19 {
+  font-family: 'DM-SANS', Arial;
+  font-size: 19px;
+}
+
+.dm23 {
+  font-family: 'DM-SANS', Arial;
+  font-size: 23px;
+}
+
+.h70 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+
 

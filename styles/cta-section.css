@@ -193,13 +193,14 @@
 
 .cta-section-bottom {
   background-color: #6222cc;
+  width: 1170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 90px 80px;
   border-radius: 8px;
   position: relative;
-  z-index: 1000;
+  z-index: 100;
   overflow: hidden;  
 }
 
