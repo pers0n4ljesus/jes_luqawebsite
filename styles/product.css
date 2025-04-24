@@ -2,6 +2,10 @@
   background-color: black;
 }
 
+.button-product {
+  z-index: 1000;
+}
+
 .product-hero-section-container {
   display: flex;
   flex-direction: column;
