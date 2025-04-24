@@ -23,6 +23,10 @@
   display: none !important;
 }
 
+.product-hero-image-mobile {
+  display: none;
+}
+
 
 
 
@@ -576,6 +580,17 @@ button[nav] {
     padding: 0px 15px;
   }
 
+  .product-hero-image-mobile {
+    display: flex;
+    padding: 0px 15px;
+    margin-bottom: 100px;
+  }
+
+  .product-hero-dashboard-mobile {
+    width: 100%;
+    border-radius: 8px;
+  }
+
   h1 {
     font-size: 36px;
   }
@@ -598,6 +613,7 @@ button[nav] {
 
   .key-features-section .key-features-container {
     width: 100vw;
+    margin-top: 100px;
   }
 
   .key-features-header {
