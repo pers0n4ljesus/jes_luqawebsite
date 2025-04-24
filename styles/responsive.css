@@ -564,20 +564,11 @@ button[nav] {
     align-items: center;
     overflow: hidden;
   }
-
-  .product-hero-section {
-    width: 100px;
-    margin-top: 0px;
-    justify-content: center;
-    align-items: center;
+  
+  .product-hero-section-container {
+    width: 100vw;
+    overflow: hidden;
   }
-
-  .product-hero-content {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
 
   .product-hero-content h1 {
     width: 100vw;
