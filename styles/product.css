@@ -115,6 +115,8 @@
   border-radius: 8px;
   background-color: #6222cc;
   padding: 40px;
+  width: calc((1170px - 40px)/2);
+  height: auto;
 }
 
 .feature-icon {
