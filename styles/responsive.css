@@ -428,8 +428,8 @@ button[nav] {
 
   .cta-window-container {
     top: 800px;
-    height: 1700px;
-    justify-content: space-between;
+    height: 1900px;
+    justify-content: start;
   }
 
 
@@ -637,7 +637,7 @@ button[nav] {
   }
 
   .product-image-box {
-    width: calc(100vw - 100px);
+    width: calc(100vw - 100px) !important;
     height: auto;
   }
 
